@@ -31,7 +31,7 @@ $app->get('/', function (Request $request, Response $response, $args) {
 });
  
 // buat route untuk webhook
-$app->post('public/webhook', function (Request $request, Response $response) use ($channel_secret, $bot, $httpClient, $pass_signature) {
+$app->post('https://arintokobot.herokuapp.com/public/webhook', function (Request $request, Response $response) use ($channel_secret, $bot, $httpClient, $pass_signature) {
     // get request body and line signature header
     $body = $request->getBody();
     $signature = $request->getHeaderLine('HTTP_X_LINE_SIGNATURE');
